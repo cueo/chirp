@@ -20,32 +20,45 @@
 			<br>
 				<center><h1>Welcome to Chirp.<br><small style="color:white; font-size: 16px;">Express yourself.</small></h1>
 				<p class="button">
-					<a id="login" class = "btn btn-success btn-lg" role="button" style="width:30%;">Login</a>
+					<a id="login" class = "btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" style="width:30%;">Login</a>
 					<a id="signup" class = "btn btn-info btn-lg right-button" role = "button" href="registration/index.html" style="width:30%;">Get Started</a>
 				</p>
 				</center>
 
 				<br><br>
 			</div>
-			<div id="signin" class="row" style="display: none; width: 25%;">
-		            <div class="account-wall">
 
-		                <form class="form-signin">
-		                <h3 style="margin-top: 0px;">Login</h3>
-		                <hr>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h3>Login</h3>
+			      </div>
+			      <div class="modal-body">
+			        <form class="form-signin">
+		                
 		                <input type="text" class="form-control" placeholder="Email" required autofocus>
 		                <input type="password" class="form-control" placeholder="Password" required>
 						<label class="checkbox">
 		                    <center><input type="checkbox" value="remember-me" >
 		                    Remember me</center>
 		                </label>
-		                <button class="btn btn-lg btn-primary btn-block" type="submit">
-		                    Sign in</button>
+		                
 		                
 						<a href="registration/index.html" class="text-center new-account">Don't have an account?</a>
 		                </form>
-		            </div>
-		        </div>
+
+			      </div>
+			      <div class="modal-footer">
+			        <button class="btn btn-lg btn-primary btn-block" type="submit">
+		                    Sign in</button>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+
 		    </div>
 		</div>
 	</body>
