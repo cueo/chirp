@@ -1,6 +1,11 @@
 .full
 {
-	background: url('https://66.media.tumblr.com/c3f20b87af30230be3ea34677fac63cc/tumblr_og521pZPJh1s001e6o1_1280.gif') no-repeat cover;
+    background: url(img/back4.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    background-color: #35465c;
 }
 .button
 {
@@ -13,16 +18,22 @@
 #splash
 {
 	opacity: 0.95;
-	margin-top: 14em;
-	margin-left: 25em;
-	height: 15em;
-	background-color: #0084b4;
+	background-color: #35465c;
 	color: white;
-	border-radius: 20px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
+
 #signin
 {
-	margin-top: 10em;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .btn-primary
 {
@@ -34,7 +45,7 @@
 .form-signin
 {
     max-width: 330px;
-    padding: 15px;
+    padding: 5px;
     margin: 0 auto;
 }
 .form-signin .form-signin-heading, .form-signin .checkbox

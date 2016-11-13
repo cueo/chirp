@@ -14,27 +14,34 @@
 	</head>
 	<body class="full">
 		<div class = "container-fluid">
-			<div id="splash" class="col-xs-6 well">
-				<h1>What's happening?</h1>
+
+			<div id="splash" class="col-xs-4 well">
+			<br>
+				<center><h1>Welcome to Chirp.<br><small style="color:white; font-size: 16px;">Express yourself.</small></h1>
 				<p class="button">
-					<a id="login" class = "btn btn-success btn-lg" role = "button">Login</a>
-					<a id="signup" class = "btn btn-danger btn-lg right-button" role = "button" href="registration/index.html">Sign up</a>
+					<a id="login" class = "btn btn-success btn-lg" role = "button" style="width:30%;">Login</a>
+					<a id="signup" class = "btn btn-info btn-lg right-button" role = "button" href="registration/index.html" style="width:30%;">Get Started</a>
 				</p>
+				</center>
+
+				<br><br>
 			</div>
-			<div id="signin" class="row" style="display: none;">
-		        <div class="col-sm-6 col-md-4 col-md-offset-4">
+			<div id="signin" class="row" style="display: none; width: 25%;">
 		            <div class="account-wall">
+
 		                <form class="form-signin">
+		                <h3 style="margin-top: 0px;">Login</h3>
+		                <hr>
 		                <input type="text" class="form-control" placeholder="Email" required autofocus>
 		                <input type="password" class="form-control" placeholder="Password" required>
-		                <button class="btn btn-lg btn-primary btn-block" type="submit">
-		                    Sign in</button>
-		                <label class="checkbox pull-left">
+						<label class="checkbox pull-left">
 		                    <input type="checkbox" value="remember-me">
 		                    Remember me
 		                </label>
-		                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
-						<a href="registration/index.html" class="text-center new-account">Create an account </a>
+		                <button class="btn btn-lg btn-primary btn-block" type="submit">
+		                    Sign in</button>
+		                
+						<a href="registration/index.html" class="text-center new-account">Don't have an account?</a>
 		                </form>
 		            </div>
 		        </div>
