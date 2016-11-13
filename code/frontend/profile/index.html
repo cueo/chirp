@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>My Profile | Chirp</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://localhost/~shivadeviah/bootstrap/css/bootstrap.min.css" type="text/css" />
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Special+Elite">
+
+  </head>
+
+  <style type="text/css">
+
+  body{text-shadow: 0 0px 0px #5cb85c;}
+
+  .new-font
+  {
+    font-family: Special Elite;
+  }
+
+  p.service
+  {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 0 0px 0px #5cb85c;
+    font-weight: 10px;
+    border: 1px solid #ccc;
+  }
+
+  </style>
+
+  <body>
+
+    <div class="container">
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Chirp</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="col-md-3">
+              <form class="navbar-form" role="search">
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search" name="q">
+                  <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                  </div>
+              </div>
+              </form>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">John Doe<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+          <div class="col-md-8 col-md-offset-2">
+        
+            <div class="container"><h1 class="pull-left">Your Profile</h1></div><hr/>
+            
+                  
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Username</label>
+                <div class="col-sm-8">
+                  <p class="form-control-static">Name</p>
+                </div>
+              </div>
+
+              <br>
+
+            <div class="form-group">
+            <label class="col-sm-4 control-label">Password</label>
+            <div class="col-sm-8">
+              <center><button class="btn btn-info col-sm-12">Change Password</button></center>
+            </div>
+          </div>
+        <br>
+      <div class="form-group">
+      <label for="exampleInputFile" class="col-sm-4 control-label">Profile Picture</label>
+      <div class="col-sm-8"><img data-holder-rendered="true" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzE0MHgxNDAKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNGY1YTRkMzZmYyB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE0ZjVhNGQzNmZjIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQzLjU0MTY2NjAzMDg4Mzc5IiB5PSI3NC42NSI+MTQweDE0MDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" style="width: 140px; height: 140px;" data-src="holder.js/140x140" class="img-rounded" alt="140x140"><br><br>
+      <input type="file" id="exampleInputFile" >
+      <p class="small pull-left" style="text-shadow: 0 0px 0px #5cb85c;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Choose a profile picture that describes you)</p></div>
+    </div>
+  <br>
+
+    <div class="form-group">
+  <label for="Contact" class="col-sm-4 control-label">Other Details</label>
+      
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="exampleInputPh3" placeholder="Email">
+        
+      </div>
+  <div class="col-sm-4">
+    <p class="form-control-static">Date of Birth</p>
+      
+    </div>
+    </div>
+  <br>
+
+  <br>
+
+  <br>
+
+    <center><button class="btn btn-success btn-lg" style="min-width: 200px;">Save</button></center> <br><button class="btn btn-small pull-right">Back</button> 
+
+
+
+
+
+  </form>
+            
+          </div><!--/span-->
+
+
+        </div><!--/row-->
+
+        <hr>
+
+        <footer class="new-font">
+          <p>&copy; Chirp</p>
+        </footer>
+
+      </div><!--/.container-->
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://localhost/~shivadeviah/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost/~shivadeviah/bootstrap/js/bootstrap.min.js"></script>
+    <script src="offcanvas.js"></script>
+  </body>
+</html>
