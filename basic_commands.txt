@@ -1,0 +1,5 @@
+from tweeter.models import *
+from django.utils import timezone
+
+user = UserProfile(1, 'John Doe', 'john_doe', 'jd@gmail.com', '1990-09-11', 'M', None, timezone.now())
+user.save()
