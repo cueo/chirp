@@ -51,5 +51,8 @@ def followers(request, handle):
 		for user in User.objects.all():
 			if(this_user in user.following.iterator()):
 				users.append(user)
-			users = '<br/><br/>'.join([str(user) for user in users])
-			return HttpResponse(users)
+		users = '<br/><br/>'.join([str(user) for user in users])
+		return HttpResponse(users)
+
+def registration(request):
+	return render(request, 'registration/index.html')
