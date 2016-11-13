@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chirp</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}" type="text/css" />
+		<link rel="stylesheet" href="/static/index.css" type="text/css" />
+		<link rel="shortcut icon" href="/static/img/favicon.ico" />
+		<script type="text/javascript" src="/static/jquery.js"></script>
+		<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/static/index.js"></script>
+		<script type="text/javascript">
+			$(document).ready(init);
+		</script>
+	</head>
+	<body class="full">
+		<div class = "container-fluid">
+
+			<div id="splash" class="col-xs-4 well">
+			<br>
+				<center><h1>Welcome to Chirp.<br><small style="color:white; font-size: 16px;">Express yourself.</small></h1>
+				<p class="button">
+					<a id="login" class = "btn btn-success btn-lg" role="button" style="width:30%;">Login</a>
+					<a id="signup" class = "btn btn-info btn-lg right-button" role = "button" href="registration/index.html" style="width:30%;">Get Started</a>
+				</p>
+				</center>
+
+				<br><br>
+			</div>
+			<div id="signin" class="row" style="display: none; width: 25%;">
+		            <div class="account-wall">
+
+		                <form class="form-signin">
+		                <h3 style="margin-top: 0px;">Login</h3>
+		                <hr>
+		                <input type="text" class="form-control" placeholder="Email" required autofocus>
+		                <input type="password" class="form-control" placeholder="Password" required>
+						<label class="checkbox">
+		                    <center><input type="checkbox" value="remember-me" >
+		                    Remember me</center>
+		                </label>
+		                <button class="btn btn-lg btn-primary btn-block" type="submit">
+		                    Sign in</button>
+		                
+						<a href="registration/index.html" class="text-center new-account">Don't have an account?</a>
+		                </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</body>
+</html>

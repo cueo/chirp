@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import *
 
 def index(request):
-    return HttpResponse("Chirp! This page is currently under development. Please come back later! :)")
+    return render(request, 'tweeter/index.html')
 
 def user_profile(request, handle):
     try:
