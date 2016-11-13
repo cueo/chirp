@@ -1,4 +1,4 @@
-#Tweeter Frontend
+#Chirp Frontend
 
 ## Requirements
 * bootstrap folder should be located in `localhost` with name `bootstrap`
