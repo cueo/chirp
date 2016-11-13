@@ -1,12 +1,14 @@
 .full
 {
-    background: url(img/back4.jpg) no-repeat center center fixed; 
+        background: url(img/back5.jpeg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-    background-color: #35465c;
+        background-color: #35465c;
+    
 }
+
 .button
 {
     margin-top: 5em;
@@ -17,23 +19,31 @@
 }
 #splash
 {
-    opacity: 0.95;
+    opacity: 0.9;
     background-color: #35465c;
+    border-color: #35465c;
+    box-shadow: 3px 3px 6px #000000;
     color: white;
     position: fixed;
-    top: 40%;
+    top: 45%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    border-radius: 0px;
 }
 
 #signin
 {
     position: fixed;
-    top: 40%;
+    top: 45%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+.btn
+{
+    border-radius: 0px;
 }
 .btn-primary
 {
