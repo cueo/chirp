@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class UserProfile(models.Model):
+class User(models.Model):
 	uid = models.AutoField(primary_key=True)
 	name = models.CharField(max_length=42)
 	handle = models.CharField(max_length=42, unique=True)
@@ -15,23 +15,24 @@ class UserProfile(models.Model):
 	)
 	gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 
-	img = models.ImageField(upload_to='/profile_pic/', height_field=None, width_field=None, max_length=100)
+	img = models.ImageField(upload_to='/profile_pic/', height_field=None, width_field=None, max_length=100, blank=True)
 	joined_on = models.DateTimeField(auto_now_add=True)
+
+	following = models.ManyToManyField('self', symmetrical=False, blank=True)
 
 	def __str__(self):
 		return '@' + self.handle + ' ' + self.name
 
 class UserLoginCredentials(models.Model):
-	uid = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+	uid = models.ForeignKey(User, on_delete=models.CASCADE)
 	pwd = models.CharField(max_length=255)
 	ts = models.DateTimeField(auto_now=True)
 
 class Tweet(models.Model):
-	tid = models.IntegerField(primary_key=True)
-	uid = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+	tid = models.AutoField(primary_key=True)
+	author = models.ForeignKey(User, on_delete=models.CASCADE)
 	tweet = models.CharField(max_length=140)
 	ts = models.DateTimeField(auto_now_add=True)
 
-class Follow(models.Model):
-	follower_uid = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='follower')
-	followed_uid = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='followed')
+	def __str__(self):
+		return '@' + self.author.handle + ': ' + self.tweet
