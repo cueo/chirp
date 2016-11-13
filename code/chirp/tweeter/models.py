@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class User(models.Model):
@@ -35,4 +34,4 @@ class Tweet(models.Model):
 	ts = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
-		return '@' + self.author.handle + ': ' + self.tweet
+		return '@' + self.author.handle + '<br/>' + self.tweet + '<br/> on ' + self.ts.strftime('%A, %d %B %Y at %H:%M')
