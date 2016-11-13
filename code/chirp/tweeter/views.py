@@ -7,6 +7,12 @@ from .models import *
 def index(request):
     return render(request, 'tweeter/index.html')
 
+def auth(request):
+	username = request.POST['user']
+	password = request.POST['pass']
+
+	return HttpResponse(username + " ---- " + password)
+
 def user_profile(request, handle):
     try:
         user = User.objects.get(handle=handle)
