@@ -8,9 +8,6 @@
 		<link rel="shortcut icon" href="/static/img/favicon.ico" />
 		<script type="text/javascript" src="/static/jquery.js"></script>
 		<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(init);
-		</script>
 	</head>
 	<body class="full">
 		<div class = "container-fluid">
@@ -35,22 +32,16 @@
 			        <h3>Login</h3>
 			      </div>
 			      <div class="modal-body">
-			        <form class="form-signin">
-		                
-		                <input type="text" class="form-control" placeholder="Email" required autofocus>
-		                <input type="password" class="form-control" placeholder="Password" required>
-						<label class="checkbox">
-		                    <center><input type="checkbox" value="remember-me" >
-		                    Remember me</center>
-		                </label>
-		                
+			        <form class="form-signin" action='auth/' method='POST' id="login-form">  {% csrf_token %}
+		                <input type="text" name="user" id="user" class="form-control" placeholder="Username" required autofocus>
+		                <input type="password" name="pass" id="pass"  class="form-control" placeholder="Password" required>
 		                
 						<a href="registration/index.html" class="text-center new-account">Don't have an account?</a>
 		                </form>
 
 			      </div>
 			      <div class="modal-footer">
-			        <button class="btn btn-lg btn-primary btn-block" type="submit">
+			        <button class="btn btn-lg btn-primary btn-block" onclick="document.getElementById('login-form').submit();">
 		                    Sign in</button>
 			      </div>
 			    </div><!-- /.modal-content -->
