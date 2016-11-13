@@ -38,3 +38,6 @@ def followers(request, handle):
                 users.append(user)
         users = '<br/><br/>'.join([str(user) for user in users])
         return HttpResponse(users)
+
+def registration(request):
+	return render(request, 'registration/index.html')
