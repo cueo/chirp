@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import *
+
+from django.utils import timezone
 
 def index(request):
 	return render(request, 'tweeter/index.html')
@@ -19,7 +21,8 @@ def auth(request):
 		uid = user.uid
 		pwd = UserLoginCredentials.objects.get(uid=uid).pwd
 		if(password == pwd):
-			return HttpResponse('Login successful!')
+			#return HttpResponse('Login successful!')
+			return HttpResponseRedirect('http://localhost:8000/tweeter/' + username)
 		else:
 			return HttpResponse('Invalid username and password combination!')
 
@@ -55,10 +58,25 @@ def followers(request, handle):
 		users = '<br/><br/>'.join([str(user) for user in users])
 		return HttpResponse(users)
 
+
 def registration_success(request):
 	if request.method == 'POST':
 		# do registration stuff
-		pass
+		name = request.POST['fullname']
+		handle = request.POST['handle']
+		password = request.POST['pass']
+		email_id = request.POST['email']
+		dob = request.POST['dob']
+		if request.POST['gender'] == 'male':
+			gender = 'M'
+		elif request.POST['gender'] == 'female':
+			gender = 'F'
+		else:
+			gender = 'O'
+		user = User(name=name, handle=handle, email_id=email_id, dob=dob, gender=gender, img=None, joined_on=timezone.now())
+		# print(dob)
+		user.save()
+		# user_creds = UserLoginCredentials(user.uid)
 	return render(request, 'registration/success.html')
 
 def registration(request):

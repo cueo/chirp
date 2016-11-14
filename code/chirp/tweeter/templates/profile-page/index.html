@@ -63,7 +63,7 @@
           </div>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">John Doe<b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{user.name}}<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">My Profile</a></li>
                 <li class="divider"></li>
@@ -75,10 +75,10 @@
       </nav>
 
       <div class="col-md-4">
-        <img width="100%" height="400px"/>
-        <h3 id="username">John Doe
+        <img width="100%" height="400px" src='/static/profile_pics/{{user.handle}}.png'/>
+        <h3 id="username">{{ user.name }}
           <br>
-          <small id="handle">@johndoe</small>
+          <small id="handle">@{{ user.handle }}</small>
         </h3>
       </div>
 

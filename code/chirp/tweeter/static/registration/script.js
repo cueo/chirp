@@ -13,10 +13,24 @@ $(function() {
     $('#step-1-next').click(function() {
         // Check values here
         var isValid = true;
-
-        if(isValid) {
-            $('.nav-tabs > li:nth-of-type(2) > a').removeClass('disabled').click();
+		email_id = $('#email').val();
+		p1 = $('#pwd').val();
+		p2 = $('#cnf-pwd').val();
+		if(! email_id) {
+			alert("Please enter a valid email address!");
         }
+		else if(! p1)
+		{
+			alert("Please enter a password!");
+		}
+		else if(p1 != p2)
+		{
+			alert("Passwords don't match!");
+		}
+		else
+		{
+			$('.nav-tabs > li:nth-of-type(2) > a').removeClass('disabled').click();
+		}
     });
     $('#step-2-next').click(function() {
         // Check values here
@@ -43,6 +57,7 @@ $(function()
 		$form = $('#form-custom');
 		$form.attr('method', 'POST');
 		$form.attr('action', 'success.html');
+		$form.append('<input name="fullname" type="fullname" value=' + $('#fullname').val() + ' />');
 		$form.append('<input name="email" type="email" value=' + $('#email').val() + ' />');
 		$form.append('<input name="pass" type="password" value=' + $('#pwd').val() + ' />');
 		$form.append('<input name="handle" type="text" value=' + $('#handle').val() + ' />');

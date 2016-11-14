@@ -14,7 +14,7 @@ class User(models.Model):
 	)
 	gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 
-	img = models.ImageField(upload_to='/profile_pic/', height_field=None, width_field=None, max_length=100, blank=True)
+	img = models.ImageField(upload_to='profile_pic/', height_field=None, width_field=None, max_length=100, blank=True)
 	joined_on = models.DateTimeField(auto_now_add=True)
 
 	following = models.ManyToManyField('self', symmetrical=False, blank=True)

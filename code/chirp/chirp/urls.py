@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+import django.views.static
 
 urlpatterns = [
     url(r'^tweeter/', include('tweeter.urls')),
     url(r'^admin/', admin.site.urls),
+	url(r'^tweeter/site_media/(?P<path>profile_pic/.*)$', django.views.static.serve, {'document_root': '../../site_media'}),
 ]
