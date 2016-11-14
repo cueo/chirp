@@ -95,19 +95,19 @@
 
         <hr>
 
-        <h3><small>Read about all the trending topics, right here on Chirp.</small></h3>
+        {% for tweet in tweets %}
+		        <div class="list-group-item">
+					<a href="/tweeter/{{ tweet.author.handle }}/">@{{ tweet.author.handle }}</a>
+					<br>
+					<p class="list-group-item-text">{{ tweet.tweet }}<br><br></p>
+					<small> - {{ tweet.ts }}</small>
+			  </div>
+		        <br>
+	    {% endfor %}
+		{% if not tweets %}
+			<h3><small>Haven't chirped yet? Why wait?</small></h3>
+		{% endif %}
 
-        <a class="list-group-item">
-          <br>
-          <p class="list-group-item-text"><br><br><br><br><br><br></p>
-        </a>
-        <br>
-        <a class="list-group-item">
-          <br>
-          <p class="list-group-item-text"><br><br><br><br><br><br></p>
-        </a>
-      </div>
-        <br>
 
     </div> <!-- /container -->
 

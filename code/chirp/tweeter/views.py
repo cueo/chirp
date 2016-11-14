@@ -20,7 +20,7 @@ def auth(request):
 		pwd = UserLoginCredentials.objects.get(uid=uid).pwd
 		if(password == pwd):
 			return HttpResponse('Login successful!')
-		if(password == pwd):
+		else:
 			return HttpResponse('Invalid username and password combination!')
 
 def user_profile(request, handle):
@@ -30,8 +30,8 @@ def user_profile(request, handle):
 		return HttpResponse("This user handle does not belong to anyone!")
 	else:
 		tweets = Tweet.objects.all().filter(author=user).order_by('-ts')
-		tweets = '<br/><br/>'.join([str(tweet) for tweet in tweets])
-		return HttpResponse(tweets)
+		context = {'user': user, 'tweets': tweets}
+		return render(request, 'profile-page/index.html', context)
 
 def following(request, handle):
 	try:
