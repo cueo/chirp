@@ -2,8 +2,13 @@
 <html>
 	<head>
 		<title>Chirp - Registration Success</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}" type="text/css" />
 	</head>
 	<body style="background: #0084b4">
-		<h2>Congratulations, now you can start chirping!</h2>
+		<div class="container vertical-center">
+			<h2>Congratulations, now you can start chirping!</h2>
+			<a class="btn btn-success col-sm-1" href="http://localhost:8000/tweeter/">Home</a>
+		</div>
 	</body>
 </html>
