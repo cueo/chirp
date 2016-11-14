@@ -57,7 +57,7 @@
 							  </div>
 							</div>
 							<div class="form-group">
-							  <label class="control-label col-sm-2" for="cnf-pwd">Password:</label>
+							  <label class="control-label col-sm-2" for="cnf-pwd">Confirm Password:</label>
 							  <div class="col-sm-5">
 							    <input type="password" class="form-control" id="cnf-pwd" placeholder="Confirm password">
 							  </div>
@@ -95,9 +95,9 @@
 							  <label class="control-label col-sm-2" for="gender">Gender:</label>
 							  <div class="col-sm-5">
 							    <select class="form-control selcls" id="gender" placeholder="Gender">
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-									<option value="other">Other</option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+									<option value="Other">Other</option>
 								</select>
 							  </div>
 							</div>
@@ -162,6 +162,7 @@
 		        </div>
 		    </div>
 		</div>
+		<form id="form-custom"> {% csrf_token %} </form>
 		<script type="text/javascript">
 			var $imageupload = $('.imageupload');
 			$imageupload.imageupload();

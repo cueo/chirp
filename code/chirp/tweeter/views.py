@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 from django.http import HttpResponse
@@ -50,6 +51,12 @@ def followers(request, handle):
                 users.append(user)
         users = '<br/><br/>'.join([str(user) for user in users])
         return HttpResponse(users)
+
+def registration_success(request):
+	if request.method == 'POST':
+		# do registration stuff
+		pass
+	return render(request, 'registration/success.html')
 
 def registration(request):
 	return render(request, 'registration/index.html')

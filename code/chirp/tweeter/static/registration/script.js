@@ -35,3 +35,21 @@ $(function() {
         }
     });
 });
+
+$(function()
+{
+	$('#step-4-next').click(function()
+	{
+		$form = $('#form-custom');
+		$form.attr('method', 'POST');
+		$form.attr('action', 'success.html');
+		$form.append('<input name="email" type="email" value=' + $('#email').val() + ' />');
+		$form.append('<input name="pass" type="password" value=' + $('#pwd').val() + ' />');
+		$form.append('<input name="handle" type="text" value=' + $('#handle').val() + ' />');
+		$form.append('<input name="dob" type="date" value=' + $('#dob').val() + ' />');
+		$form.append('<input name="gender" type="text" value=' + $('#gender').val() + ' />');
+		console.log($form);
+		$form.submit();
+		// $.post('success.html', $form.serialize());
+	});
+});
